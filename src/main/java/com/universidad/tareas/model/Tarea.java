@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import java.time.LocalDate;
+import com.fasterxml.jackson.annotation.JsonCreator;
 
 public class Tarea {
 
@@ -26,6 +27,7 @@ public class Tarea {
 
     private boolean completada;
 
+    @JsonCreator
     public Tarea() {}
 
     public Tarea(Long id, String titulo, String descripcion, Prioridad prioridad,
@@ -50,4 +52,6 @@ public class Tarea {
     public void setFechaLimite(LocalDate fechaLimite) { this.fechaLimite = fechaLimite; }
     public boolean isCompletada() { return completada; }
     public void setCompletada(boolean completada) { this.completada = completada; }
+
+
 }
